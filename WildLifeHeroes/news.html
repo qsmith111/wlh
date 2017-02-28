@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>news</title>
+	<link rel="stylesheet" type="text/css" href="css/new.css">
+	<link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+</head>
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<body>
+<header>
+  <img src="../image/logo.jpg">
+	<div id="name">
+		<ul class="topnav" id="myTopnav">
+		  <li><a href="WildLifeHeroes.html">Home</a></li>
+		  <li><a href="Extinction.html">Extinction</a></li>
+		  <li><a href="index.html">Places</a></li>
+		  <li><a href="Abuse.html">Abuse</a></li>
+		  <li><a href="news.html">News</a></li>
+		 <li><a href="#?w=300" rel="box11" class="poplight">Donate</a></li>
+		  <li><a href="#?w=300" rel="box12" class="poplight">Join Us</a></li>
+		  <li class="icon">
+		    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+		  </li>
+		</ul>
+	</div>
+</header>
+
+<div id="content">
+<div class="news">
+    <span>News Feed</span>
+    <ul>
+      <li><a href="#">Elephant was just killed is South Africa</a></li>
+      <li><a href="#">Alert baby Leopard was just Kidnapped</a></li>
+      <li><a href="#">Polar bear just gave brith to 2 cubs</a></li>
+      <li><a href="#">Giraffe gave birth in NY zoo</a></li>
+      <li><a href="#">Orangutan was just found on the side </a></li>
+      <li><a href="#">of the round in florida</a></li>
+      <li><a href="#">Horse was found dead in Central Park</a></li>
+      <li><a href="#">Bull escaped from slaughter house</a></li>
+      <li><a href="#">Bao Bao was just sent to China</a></li>
+    </ul>
+</div>
+	<div id="box1">
+		<h2>NEWS</h2>
+		<div id="box2">
+			<iframe width="100%" height="200px" src="https://www.youtube.com/embed/csLiYr5OGbg" frameborder="0" allowfullscreen></iframe>
+			<p>DOG FORCED TO SWIM JUST FOR ENTERTAINMENT</p>
+		</div>
+		<div id="box3">
+			<iframe width="100%" height="200px" src="https://www.youtube.com/embed/_3ePmZiyl9U" frameborder="0" allowfullscreen></iframe>
+			<p>ANIMALS ARE ABUSED FOR OUR CLOTHES(NEEDS)</p>
+		</div>
+	</div>
+	<div id="box4">
+		<div id="box5">
+			<iframe width="100%" height="200px" src="https://www.youtube.com/embed/g5G80R7qAKY" frameborder="0" allowfullscreen></iframe>
+			<p>RHINO KILLED FOR HORN AND BABY RHINO LEFT AS ORPHAN</p>
+		</div>
+		<div id="box6">
+			<iframe width="100%" height="200px" src="https://www.youtube.com/embed/TN_SUvQmKl4" frameborder="0" allowfullscreen></iframe>
+			<p>POLAR BEAR KILLED FOR WALKING AROUND ITS HOME</p>
+		</div>
+		<div id="box7">
+			<div id="box8">
+				<iframe width="100%" height="200px" src="https://www.youtube.com/embed/qH6trIKSl5I" frameborder="0" allowfullscreen></iframe>
+				<p>RINGLINGS BROTHER CIRCUS RELICES ELEPHANTS</p>
+			</div>
+			<div id="box9">
+				<iframe width="100%" height="200px" src="https://www.youtube.com/embed/5oTCA9V3eNs" frameborder="0" allowfullscreen></iframe>
+				<p>THIS IS WHY ANIMALS ESCAPE THE SLAUGHTER HOUSE</p>
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
+  <div id="copy">
+    <ul>
+      <li>© 2017 Wild Life Heroes</li>
+      <li>Saving all animals lives</li>
+      <li>Hear their voice</li>
+      <li>Anthony, Ashley, Jacqueline, Quin,</li>
+    </ul>
+  </div>
+</footer>
+
+<div id="box11" class="popup_block">
+<h3>Donate</h3>
+  <div id="space">
+   <form actions="" style="line-height: 120%;">
+        Firstname:
+        <input type="text" name="firstname">
+        <br>
+        <br>
+        Lastname:
+        <input type="text" name="Lastname">
+        <br>
+        <br>
+        </form>
+        <form actions="">
+        Email:
+        <input type="email" id="myEmail" value="xyz_123@example.com"> 
+        <br>
+        <br>
+        </form>
+        <form>    
+        Amount
+        <input type="D.O.B" id="DOB" value="$00.00">
+        <br>
+        <br>
+        </form>
+        <form>
+        <input type="submit" name="submit" style="background-color: #6bd390; color: white">
+        </form>
+  </div>
+
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box12" class="popup_block">
+<h3>Join us</h3>
+  <div id="space">
+   <form actions="" style="line-height: 120%;">
+        Firstname:
+        <input type="text" name="firstname">
+        <br>
+        <br>
+        Lastname:
+        <input type="text" name="Lastname">
+        <br>
+        <br>
+        </form>
+        <form actions="">
+        Email:
+        <input type="email" id="myEmail" value="xyz_123@example.com"> 
+        <br>
+        <br>
+        </form>
+        <form>    
+        D.O.B:
+        <input type="D.O.B" id="DOB" value="03/20/1942">
+        <br>
+        <br>
+        </form>
+        <form>
+        Password:
+        <input type="Password" id="mypsw" value="psw123">
+        <br>
+        <br>
+        </form>
+        <form>
+          Username:
+          <input type="Username" id="UN" value="example_123">
+        </form>
+        <form>
+        <br>
+        <br>
+        <input type="submit" name="submit" style="background-color: #6bd390; color: white">
+        </form>
+  </div>
+
+</div></div></div></div></div></div></div></div></div></div>
+</body>
+</html>

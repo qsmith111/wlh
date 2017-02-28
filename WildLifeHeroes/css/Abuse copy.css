@@ -1,0 +1,212 @@
+body{
+  width: 100%;
+  height: 100%;
+}
+
+header{
+  width: 100%;
+  height: 150px;
+}
+
+header img{
+  width: 20%;
+  height: 130px;
+  padding-left: 10px
+}
+
+#name{
+    position: relative;
+    bottom: -41px;
+    width: 75%;
+    height: 58px;
+    float: right;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 2;
+}
+
+ul.topnav li {
+  text-align: center;
+  float: left;
+  padding-left: 10px;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    color: #6bd390;
+    padding: 18px 20px;
+    text-decoration: none;
+    transition: 0.7s;
+    font-size: 20px;
+}
+
+ul.topnav li a:hover {
+  background-color: #047221;
+}
+
+ul.topnav li.icon {
+  display: none;
+}
+
+@media screen and (max-width:700px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:700px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+#content {
+  height: 2040px;
+  width: 100%;
+  background-color: red;
+}
+
+#circus {
+  width: 100%;
+
+}
+
+#circus h3 {
+  font-size: 35px;
+  position: relative;
+  text-align: center;
+  bottom: -20px;
+  font-style: italic;
+  text-decoration: underline;
+  color: white;
+  width: 100%;
+}
+
+#circus p {
+    width: 713px;
+    color: white;
+    padding-left: 31px;
+    font-size: 0.944em;
+    font-family: "Trebuchet MS";
+}
+
+#circus img {
+  height: 260px;
+  width: 480px;
+  position: relative;
+  right: -745px;
+  top: -322px;
+  padding: 22px;
+}
+
+#horse h3 {
+  font-size: 35px;
+  position: relative;
+  text-align: center;
+  bottom: 310px;
+  font-style: italic;
+  text-decoration: underline;
+  color: white;
+  width: 100%;
+}
+
+#horse p {
+  width: 671px;
+  color: white;
+  padding-left: 31px;
+  font-size: 0.944em;
+  font-family: "Trebuchet MS";
+  position: relative;
+  top: -331px;
+}
+
+#horse img {
+  height: 220px;
+  width: 410px;
+  position: relative;
+  right: -704px;
+  top: -428px;
+  padding: 22px;
+}
+
+#central-park img {
+  height: 220px;
+  width: 410px;
+  position: relative;
+  right: -736px;
+  top: -800px;
+  padding: 22px;
+
+}
+
+#zoo {
+  width: 100%;
+  height: 280px;
+}
+
+#zoo h3 {
+  font-size: 35px;
+  position: relative;
+  text-align: center;
+  bottom: 788px;
+  font-style: italic;
+  text-decoration: underline;
+  color: white;
+  width: 100%;
+}
+
+#zoo p {
+  width: 671px;
+  color: white;
+  padding-left: 31px;
+  font-size: 0.944em;
+  font-family: "Trebuchet MS";
+  position: relative;
+  bottom: 822px;
+}
+
+#zoo img {
+  height: 220px;
+  width: 410px;
+  position: relative;
+  right: -736px;
+  bottom: 1826px;
+  padding: 22px;
+}
+
+#tiger img {
+  height: 220px;
+  width: 410px;
+  position: relative;
+  right: -736px;
+  bottom: 1850px;
+  padding: 22px;
+}
+
+#polar-bear img {
+  height: 220px;
+  width: 410px;
+  position: relative;
+  right: -736px;
+  bottom: 1872px;
+  padding: 22px;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>WildLifeHeroes</title>
+	<link rel="stylesheet" type="text/css" href="css/WildLifeHeroes.css">
+  <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<body>
+
+<header>
+  <img src="../image/logo.jpg">
+	<div id="name">
+		<ul class="topnav" id="myTopnav">
+		  <li><a href="WildLifeHeroes.html">Home</a></li>
+		  <li><a href="Extinction.html">Extinction</a></li>
+		  <li><a href="index.html">Places</a></li>
+		  <li><a href="Abuse.html">Abuse</a></li>
+		  <li><a href="news.html">News</a></li>
+		  <li><a href="#?w=300" rel="box1" class="poplight">Donate</a></li>
+		  <li><a href="#?w=300" rel="box2" class="poplight">Join Us</a></li>
+		  <li class="icon">
+		    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+		  </li>
+		</ul>
+	</div>
+</header>
+
+<div id="content">
+	<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 6</div>
+    <img src="../image/Leopard-tree.jpg.adapt.945.1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 6</div>
+    <img src="../image/360_susi_0515.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 6</div>
+    <img src="../image/imani_frank.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 6</div>
+    <img src="../image/polar-bear-cub-on-mom.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 6</div>
+    <img src="../image/pandas-live_64dff22c2fe56e9.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 6</div>
+    <img src="../image/bees.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)"></a>
+  <a class="next" onclick="plusSlides(1)"></a>
+</div>
+<br>
+<div id="side">
+  
+</div>
+<div id="bottom">
+<p>“The assumption that animals are without rights and the illusion that our treatment of them has no moral significance is a positively outrageous example of Western crudity and barbarity. Universal compassion is the only guarantee of morality.”  ― Arthur Schopenhauer, The Basis of Morality
+</p>
+<h3>Our Purpose</h3>
+<p>
+  Most of us in this world are true animal lovers who believe that animals of any species should have rights and never be treated as a commodity. They are mammals just like us and exactly how we fight for our brothers and sisters, we should fight for our pets and companions as well.
+</p>
+</div>
+
+<div id="right">
+<img src="../image/nohunting.jpg">
+<img src="../image/Baboon-At-Zoo.jpg">
+</div>
+</div>
+
+<footer>
+  <div id="copy">
+    <ul>
+      <li>© 2017 Wild Life Heores</li>
+      <li>Saving all animals lifes</li>
+      <li>Hear their voice</li>
+      <li>Anthony, Ashely, Jacqueline, Quin,</li>
+    </ul>
+  </div>
+</footer>
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+}
+</script>
+
+<div id="box1" class="popup_block">
+<h2>Donate</h2>
+  <div id="space">
+   <form actions="" style="line-height: 120%;">
+        Firstname:
+        <input type="text" name="firstname">
+        <br>
+        <br>
+        Lastname:
+        <input type="text" name="Lastname">
+        <br>
+        <br>
+        </form>
+        <form actions="">
+        Email:
+        <input type="email" id="myEmail" value="xyz_123@example.com"> 
+        <br>
+        <br>
+        </form>
+        <form>    
+        Amount
+        <input type="D.O.B" id="DOB" value="$00.00">
+        <br>
+        <br>
+        </form>
+        <form>
+        <input type="submit" name="submit" style="background-color: #6bd390; color: white">
+        </form>
+  </div>
+
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box2" class="popup_block">
+<h2>Join us</h2>
+  <div id="space">
+   <form actions="" style="line-height: 120%;">
+        Firstname:
+        <input type="text" name="firstname">
+        <br>
+        <br>
+        Lastname:
+        <input type="text" name="Lastname">
+        <br>
+        <br>
+        </form>
+        <form actions="">
+        Email:
+        <input type="email" id="myEmail" value="xyz_123@example.com"> 
+        <br>
+        <br>
+        </form>
+        <form>    
+        D.O.B:
+        <input type="D.O.B" id="DOB" value="03/20/1942">
+        <br>
+        <br>
+        </form>
+        <form>
+        Password:
+        <input type="Password" id="mypsw" value="psw123">
+        <br>
+        <br>
+        </form>
+        <form>
+          Username:
+          <input type="Username" id="UN" value="example_123">
+        </form>
+        <form>
+        <br>
+        <br>
+        <input type="submit" name="submit" style="background-color: #6bd390; color: white">
+        </form>
+  </div>
+
+</div></div></div></div></div></div></div></div></div></div>
+</body>
+</html>

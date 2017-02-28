@@ -1,0 +1,727 @@
+body{
+  width: auto;
+  height: auto;
+}
+
+header img{
+  width: 20%;
+  height: 130px;
+  padding-left: 10px
+}
+
+#name{
+    position: relative;
+    bottom: -41px;
+    width: 75%;
+    height: 58px;
+    float: right;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 2;
+    width: 100%;
+
+}
+
+ul.topnav li {
+  text-align: center;
+  float: left;
+  padding-left: 10px;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    color: #6bd390;
+    padding: 17px 17px;
+    text-decoration: none;
+    transition: 0.7s;
+    font-size: 18px;
+}
+
+ul.topnav li a:hover {
+  background-color: #047221;
+}
+
+ul.topnav li.icon {
+  display: none;
+}
+
+@media screen and (max-width:700px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:700px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/*Beginning of Map CSS*/
+
+
+description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(229, 229, 229, 0.7);
+}
+
+div, img, footer {
+  position: relative;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 36pt;
+}
+
+h2 {
+  font-size: 24pt;
+}
+
+h3 {
+  font-size: 18pt;
+}
+
+h4 {
+  font-size: 16pt;
+}
+
+h5 {
+  font-size: 14pt;
+}
+
+h6 {
+  font-size: 12pt;
+}
+
+p {
+  font-size: 12pt;
+  margin-bottom: 12pt;
+}
+
+strong {
+  font-weight: 900;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  color: #e5e5e5;
+}
+
+a {
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #dff3fd;
+}
+a:visited {
+  color: #dff3fd;
+}
+li.active a, a:hover, a:active {
+  color: #e5e5e5;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.centered-y {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.distribution-map {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.distribution-map > img {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.distribution-map .map-point {
+  cursor: pointer;
+  outline: none;
+  z-index: 0;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+  -o-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+  -webkit-transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out, z-index 0.25s ease-in-out;
+  -webkit-transition-delay: 0.25s, 0.25s, 0.25s, 0.25s;
+  -webkit-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+  transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+  background: rgba(26, 26, 26, 0.85);
+  border: 5px solid #7fcff7;
+}
+.distribution-map .map-point .content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  overflow: overlay;
+}
+.distribution-map .map-point:active, .distribution-map .map-point:focus {
+  margin: 0;
+  padding: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  width: 300px;
+  height: 220px;
+  color: #e5e5e5;
+  z-index: 1;
+  -webkit-transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out;
+}
+.distribution-map .map-point:active .content, .distribution-map .map-point:focus .content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+  -webkit-transition-delay: 0.25s, 0s, 0s;
+  -webkit-transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+  overflow: hidden;
+}
+.distribution-map .map-point:active .content a:hover, .distribution-map .map-point:active .content a:active, .distribution-map .map-point:focus .content a:hover, .distribution-map .map-point:focus .content a:active {
+  color: #afe1fa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Breakpoints
+// ========================================================================== */
+/* 320px */
+/* 480px */
+/* 599px */
+/* 600px */
+/* 768px */
+/* 967px */
+/* 960px */
+/* 1400px */
+/* Colors 
+// ========================================================================== */
+/* Convert px to ems
+// ========================================================================== */
+/* Mixins
+// ========================================================================== */
+/* Media Query Watcher
+// ========================================================================== */
+#getActiveMQ-watcher {
+  font-family: "break-0";
+}
+@media (min-width: 20em) {
+  #getActiveMQ-watcher {
+    font-family: "break-1";
+  }
+}
+@media (min-width: 30em) {
+  #getActiveMQ-watcher {
+    font-family: "break-2";
+  }
+}
+@media (min-width: 37.5em) {
+  #getActiveMQ-watcher {
+    font-family: "break-3";
+  }
+}
+@media (min-width: 48em) {
+  #getActiveMQ-watcher {
+    font-family: "break-4";
+  }
+}
+@media (min-width: 60em) {
+  #getActiveMQ-watcher {
+    font-family: "break-5";
+  }
+}
+
+/* =Map Pin Animation
+// ========================================================================== */
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+/* =Places Map
+// ========================================================================== */
+#places-map {
+  background: #45cfd3;
+
+  position: relative;
+  width: 100%;
+}
+#places-map h1 {
+  font-size: 1.3125em;
+  margin-top: 0.95238em;
+  text-align: center;
+}
+@media (min-width: 37.5em) {
+  #places-map h1 {
+    font-size: 2.1875em;
+    margin-top: 0.94286em;
+  }
+}
+#places-map .wu-logo {
+  display: none;
+  height: 3.875em;
+  width: 11.3125em;
+}
+@media (min-width: 60em) {
+  #places-map .wu-logo {
+    background: url(http://jeffbridgforth.com/codepen/wu-logo.jpg) no-repeat;
+    display: block;
+    position: absolute;
+    bottom: 1.875em;
+    left: 2em;
+  }
+}
+@media (min-width: 87.5em) {
+  #places-map .wu-logo {
+    left: 50%;
+    margin-left: -43.75em;
+  }
+}
+#places-map img {
+  height: auto;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  bottom: -4px;
+}
+.secondary-page #places-map .content {
+  margin: 0;
+  position: relative;
+}
+@media (min-width: 60em) {
+  .secondary-page #places-map .content {
+    margin: 0 auto;
+  }
+}
+#places-map .map {
+  position: relative;
+  max-width: 56.4375em;
+  margin-left: auto;
+  margin-right: auto;
+}
+#places-map .map-pins {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#places-map .map-location-marker {
+  background: url(http://jeffbridgforth.com/codepen/map-pin.png) no-repeat;
+  cursor: pointer;
+  position: absolute;
+  height: 1.875em;
+  margin-top: -1.875em;
+  margin-left: -0.78571em;
+  width: 1.3125em;
+  z-index: 3;
+}
+@media (min-width: 48em) {
+  .js #places-map .map-location-marker {
+    visibility: hidden;
+  }
+  .js #places-map .map-location-marker.bounceInDown {
+    visibility: visible;
+  }
+}
+#places-map .marker-san-francisco {
+  left: 11%;
+  top: 45%;
+}
+@media (max-width: 37.4375em) {
+  #places-map .marker-san-francisco {
+    left: 6%;
+    top: 32%;
+  }
+}
+#places-map .marker-denver {
+  left: 15%;
+  top: 29%;
+  -webkit-animation-delay: .1s;
+  animation-delay: .1s;
+}
+#places-map .marker-argentina {
+  left: 20.5%;
+  bottom: 55.5%;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+#places-map .marker-dubai {
+  left: 49%;
+  top: 60%;
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+#places-map .marker-costa-rica {
+  left: 12.5%;
+  top: 43%;
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+}
+#places-map .marker-peterborough {
+  left: 46.3%;
+  top: 10%;
+  -webkit-animation-delay: .4s;
+  animation-delay: .4s;
+}
+#places-map .marker-vilnius {
+  left: 16%;
+  top: 59%;
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+#places-map .marker-singapore {
+  left: 74%;
+  bottom: 58%;
+  -webkit-animation-delay: .7s;
+  animation-delay: .7s;
+}
+#places-map .marker-manila {
+  left: 82.5%;
+  top: 39%;
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+#places-map .marker-sydney {
+  bottom: 40%;
+  right: 10.5%;
+  -webkit-animation-delay: .9s;
+  animation-delay: .9s;
+}
+#places-map .map-location-marker:after {
+  -webkit-animation: pulsate 2s ease-in-out infinite;
+  -moz-animation: pulsate 2s ease-in-out infinite;
+  animation: pulsate 2s ease-in-out infinite;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  content: "";
+  display: block;
+  height: 31px;
+  left: -7px;
+  opacity: 0;
+  position: absolute;
+  top: -8px;
+  -webkit-transition: all .25s linear;
+  -moz-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+  width: 31px;
+  z-index: 2;
+}
+
+#page-places {
+  position: relative;
+}
+
+#map-info {
+  background: #000;
+  color: #fff;
+  position: absolute;
+  top: -1.5625em;
+  left: 50%;
+  margin-left: -7.8125em;
+  padding: 1.125em;
+  width: 15.625em;
+  z-index: 10;
+}
+#map-info .close-btn {
+  background: url(http://jeffbridgforth.com/codepen//close-btn.png) no-repeat;
+  cursor: pointer;
+  display: block;
+  height: 0.6875em;
+  width: 0.6875em;
+  position: absolute;
+  right: 1.125em;
+  top: 1.125em;
+}
+@media (min-width: 30em) {
+  #map-info {
+    top: 50%;
+    margin-top: -8.875em;
+  }
+}
+@media (min-width: 60em) {
+  #map-info {
+    margin-left: -8.875em;
+    width: 17.75em;
+  }
+}
+@media (min-width: 48em) {
+  #map-info {
+    margin-left: -283px;
+    margin-top: -9px;
+  }
+  #map-info:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 13px 16px 13px 0;
+    border-color: transparent #000 transparent transparent;
+    position: absolute;
+    left: -16px;
+  }
+  #map-info.san-francisco {
+    left: 45%;
+    top: 36%;
+  }
+  #map-info.denver {
+    left: 49%;
+    top: 20.5%;
+  }
+  #map-info.argentina {
+    left: 54.5%;
+    bottom: 165px;
+    top: auto;
+  }
+  #map-info.argentina:before {
+    top: 152px;
+  }
+  #map-info.costa-rica {
+    bottom: 16%;
+    left: 46%;
+    top: auto;
+  }
+  #map-info.costa-rica:before {
+    top: 45px;
+  }
+  #map-info.peterborough {
+    top: -0.5%;
+    left: 48%;
+  }
+  #map-info.vilnius {
+    top: -290%;
+    left: -12%;
+  }
+  #map-info.dubai {
+    top: 51%;
+    left: 82.5%;
+  }
+  #map-info.singapore {
+    left: auto;
+    top: auto;
+    bottom: 15%;
+    right: 29%;
+  }
+  #map-info.singapore:before {
+    border-width: 13px 0 13px 16px;
+    border-color: transparent transparent transparent #000;
+    left: auto;
+    right: -16px;
+    top: 55px;
+  }
+  #map-info.manila {
+    left: auto;
+    top: auto;
+    bottom: 18.75%;
+    right: 20.5%;
+  }
+  #map-info.manila:before {
+    border-width: 13px 0 13px 16px;
+    border-color: transparent transparent transparent #000;
+    left: auto;
+    right: -16px;
+  }
+  #map-info.sydney {
+    left: auto;
+    top: auto;
+    right: 14.5%;
+    bottom: 140px;
+  }
+  #map-info.sydney:before {
+    border-width: 13px 0 13px 16px;
+    border-color: transparent transparent transparent #000;
+    left: auto;
+    right: -16px;
+    bottom: 50px;
+  }
+}
+#map-info h1 {
+  float: left;
+  font-size: 1.375em;
+  line-height: 1;
+  margin-bottom: 0.72727em;
+  margin-top: 0;
+}
+#map-info a {
+  color: #ffdf1c;
+  display: block;
+  font-size: 0.75em;
+  float: right;
+  margin-right: 2.5em;
+  margin-top: 0.66667em;
+  text-decoration: underline;
+}
+#map-info img {
+  height: auto;
+  max-width: 100%;
+}
+

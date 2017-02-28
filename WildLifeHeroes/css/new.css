@@ -1,0 +1,297 @@
+body{
+	width: auto;
+	height: auto;
+}
+
+header{
+	width: 100%;
+	height: 150px;
+}
+
+header img{
+  width: 20%;
+  height: 130px;
+  padding-left: 10px
+}
+
+#name{
+    position: relative;
+    bottom: -41px;
+    width: 75%;
+    height: 58px;
+    float: right;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 2;
+}
+
+ul.topnav li {
+	text-align: center;
+	float: left;
+  padding-left: 10px;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    color: #6bd390;
+    padding: 18px 20px;
+    text-decoration: none;
+    transition: 0.7s;
+    font-size: 20px;
+    font-family: 'Handlee', cursive;
+}
+
+ul.topnav li a:hover {
+	background-color: #047221;
+}
+
+ul.topnav li.icon {
+	display: none;
+}
+
+@media screen and (max-width:700px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:700px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+#content{
+  width: 100%;
+  height: 960px
+}
+
+@keyframes ticker {
+  0%   {margin-top: -50px}
+  11%  {margin-top: -100px}
+  22%  {margin-top: -150px}
+  33%  {margin-top: -200px}
+  44%  {margin-top: -250px}
+  55%  {margin-top: -300px}
+  66%  {margin-top: -350px}
+  77%  {margin-top: -400px}
+  88%  {margin-top: -450px}
+  100% {margin-top: -50px}
+}
+
+.news {
+  background: #c8102e;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: 570px;
+  height: 40px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none;
+} 
+
+.news span {
+  float: left;
+  color: #fff;
+  padding: 4px;
+  position: relative;
+  top: 1%;
+  border-radius: 4px;
+  background: #333;
+  font: 28px Raleway, Arial, sans-serif;
+  vertical-align: -webkit-baseline-middle;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.news ul {
+  float: left;
+  padding-left: 10px;
+  animation: ticker 25s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none;
+}
+
+.news ul li { line-height: 50px; list-style: none }
+
+.news ul li a {
+  margin-left:160px;
+  color: #fff;
+  text-decoration: none;
+  font: 22px Raleway, Arial, sans-serif;
+  vertical-align: -webkit-baseline-middle;
+  vertical-align: -moz-middle-with-baseline;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+.news ul:hover { animation-play-state: paused }
+.news span:hover+ul { animation-play-state: paused }
+
+#box1{
+  width: 100%;
+  height: 310px;
+}
+
+h2{
+  text-align: center;
+  text-decoration: underline;
+  color: black;
+}
+
+#box2{
+  width: 48.5%;
+  height: 200px;
+ position: relative;
+ left: 5px;
+}
+
+#box2 p{
+  text-align: center;
+  color: red;
+}
+
+#box3{
+  width: 48.5%;
+  height: 200px;
+ position: relative;
+ left: 51%;
+ bottom: 200px;
+}
+
+#box3 p{
+  text-align: center;
+  color: red;
+}
+
+#box4{
+  width: 100%;
+  height: 310px;
+}
+
+
+#box5{
+  width: 48.5%;
+  height: 200px;
+ position: relative;
+ left: 5px;
+}
+
+#box5 p{
+  text-align: center;
+  color: red;
+}
+
+#box6{
+  width: 48.5%;
+  height: 200px;
+ position: relative;
+ left: 51%;
+ bottom: 200px;
+}
+
+#box6 p{
+  text-align: center;
+  color: red;
+}
+
+#box7{
+  width: 100%;
+  height: 280px;
+  position: relative;
+  bottom: 100px;
+}
+
+#box8{
+  width: 48.5%;
+  height: 200px;
+ position: relative;
+ left: 5px;
+}
+
+#box8 p{
+  text-align: center;
+  color: red;
+}
+
+#box9{
+  width: 48.5%;
+  height: 200px;
+ position: relative;
+ left: 51%;
+ bottom: 200px;
+}
+
+#box9 p{
+  text-align: center;
+  color: red;
+}
+
+#copy{
+  text-align: center;
+  background-color: #6bd390;
+  font-family: 'Handlee', cursive;
+}
+
+@media screen and (max-width:700px){
+  #copy{
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    font-size: 11px; 
+  }
+}
+
+#copy ul li{
+  padding-top: 5px;
+  list-style: none;
+  text-align: center;
+}
+
+.popup_block{
+    display:none;
+    background:color: #6bd390;;
+    padding:20px;
+    border:1px solid #eee; 
+    float:left;
+    position:fixed;
+    top:50%;left:50%;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 20px #000; 
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000; 
+    color: white;
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; 
+    opacity:0.5;
+}

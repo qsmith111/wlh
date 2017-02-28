@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Extinction</title>
+	<link rel="stylesheet" type="text/css" href="css/Extinction.css">
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;  
+});
+});
+</script>
+<body>
+
+<header>
+  <img src="../image/logo.jpg">
+	<div id="name">
+		<ul class="topnav" id="myTopnav">
+		  <li><a href="WildLifeHeroes.html">Home</a></li>
+		  <li><a href="Extinction.html">Extinction</a></li>
+		  <li><a href="index.html">Places</a></li>
+		  <li><a href="Abuse.html">Abuse</a></li>
+		  <li><a href="news.html">News</a></li>
+		  <li><a href="#news">Donate</a></li>
+		  <li><a href="#news">Join Us</a></li>
+		  <li class="icon">
+		    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+		  </li>
+		</ul>
+	</div>
+</header>
+
+<div id="content">
+		<div id="image">
+			<a href="#?w=300" rel="box1" class="poplight"><img src="../image/Sarcophilus_harrisii_taranna.jpg"></a>
+		</div>
+		<div id="image2">
+			<a href="#?w=300" rel="box2" class="poplight"><img src="../image/rhino-06.jpg">
+		</div>
+		<div id="image3">
+			<a href="#?w=300" rel="box3" class="poplight"><img src="../image/p02x2djx.jpg">
+		</div>
+		<div id="image4">
+			<a href="#?w=300" rel="box4" class="poplight"><img src="../image/maxresdefault.jpg">
+		</div>
+		<div id="image5">
+			<a href="#?w=300" rel="box5" class="poplight"><img src="../image/download (1) 2.jpeg">
+		</div>
+		<div id="image6">
+			<a href="#?w=300" rel="box6" class="poplight"><img src="../image/bees.jpg">	
+		</div>
+		<div id="image7">
+			<a href="#?w=300" rel="box7" class="poplight"><img src="../image/20BBC5DD00000578-0-image-a-46_1427494373314.jpg">
+		</div>
+		<div id="image8">
+			<a href="#?w=300" rel="box8" class="poplight"><img src="../image/download (3).jpeg">
+		</div>
+		<div id="image9">
+			<a href="#?w=300" rel="box9" class="poplight"><img src="../image/2511f543-3cfd-408f-affb-fa80ac3fa1e5 (1).jpg"></a>
+		</div>
+</div>
+<footer>
+  <div id="copy">
+    <ul>
+      <li>© 2017 Wild Life Heroes</li>
+      <li>Saving all animals lives</li>
+      <li>Hear their voice</li>
+      <li>Anthony, Ashley, Jacqueline, Quin,</li>
+    </ul>
+  </div>
+</footer>
+<div id="box1" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>Tasmanian Devil</h3>
+<img src="../image/tasmanian-devil-baby.jpg" style="width: 100%; height: 300px;">
+<p>The Tasmanian Devil is a carnivorous marsupial of the family Dasyuridae, now found in the wild only on the Australian island state of Tasmania, including tiny east-coast Maria Island where there is a conservation project with disease-free animals</p>
+<ul id="list1">
+    <li>Scientific name: Sarcophilus harrisii</li>
+    <br>
+    <li>Conservation status: Endangered (Population decreasing)</li>
+    <br>
+    <li>Trophic level: Carnivorous</li>
+    <br>
+    <li>Speed: 8.1 mph (Maximum, Running)</li>
+    <br>
+    <li>Mass: Male: 18 lbs (Adult), Female: 13 lbs (Adult)</li>
+    <br>
+    <li>Location: Australian island state of Tasmania</li>
+    <br>
+    <li>Did you know? They eat eachother in the womb/nest,And there are about 10,000 to 25,000 mature Tasmanian devils left in the wild</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box2" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>Rhinoceros</h3>
+<img src="../image/guarding-rhino.jpg" style="width: 100%; height: 300px;">
+<p>A rhinoceros, often abbreviated to rhino, is one of any five extant species of odd-toed ungulates in the family Rhinocerotidae, as well as any of the numerous extinct species.</p>
+<ul id="list1">
+    <li>Scientific name: Rhinocerotidae</li>
+    <br>
+    <li>Higher classification: Odd-toed ungulate</li>
+    <br>
+    <li>Mass: White rhinoceros: 5,100 lbs, Black rhinoceros: 1,800 – 3,100 lbs, Indian rhinoceros: 4,600 lbs</li>
+    <br>
+    <li>Speed: White rhinoceros: 31 mph, Black rhinoceros: 34 mph, Indian rhinoceros: 34 mph</li>
+    <br>
+    <li>Lifespan: White rhinoceros: 40 – 50 years, Black rhinoceros: 35 – 50 years</li>
+    <br>
+    <li>Location: (White rhinos and black rhinos) Eastern and Southern Africa, (Greater one-horned rhinos) Northern India and Southern Nepal (Sumatran and Javan rhinos) Malaysian </li>
+    <br>
+    <li>Did you know? There are only 29,000 rhinos left in the wild.</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box3" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>Gorilla</h3>
+<img src="../image/tumblr_m7dcpdmsk81qzya49o1_500.jpg" style="width: 100%; height: 300px;">
+<p>Primate
+Gorillas are ground-dwelling, predominantly herbivorous apes that inhabit the forests of central Africa. The eponymous genus Gorilla is divided into two species: the eastern gorillas and the western gorillas, and either four or five subspecies. </p>
+<ul id="list1">
+    <li>Scientific name: Gorilla</li>
+    <br>
+    <li>Lifespan: 35 – 40 years</li>
+    <br>
+    <li>Mass: Gorilla: 350 lbs</li>
+    <br>
+    <li>Height: Western gorilla: 5.2 – 5.6 ft.</li>
+    <br>
+    <li>Gestation period: 259 days</li>
+    <br>
+    <li>Location:(Eastern lowland gorillas) Eastern Democratic Republic of Congo (DRC), Uganda and Rwanda, (mountain gorillas) only found within the Virunga mountain region straddling the DRC, Rwanda and Uganda borders, as well as the Bwindi Impenetrable National Park in Uganda.</li>
+    <br>
+    <li>Did you know: The gorillas live in groups of 6 to 12 and that group is known as Troop</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box4" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>cheetah</h3>
+<img src="../image/Duma.jpg" style="width: 100%; height: 300px;">
+<p>The cheetah is the world's fastest land mammal. With acceleration that would leave most automobiles in the dust, a cheetah can go from 0 to 60 miles (96 kilometers) an hour in only three seconds.</p>
+<ul id="list1">
+    <li>Scientific name: Acinonyx jubatus</li>
+    <br>
+    <li>Average life span: 10 to 12 years</li>
+    <br>
+    <li>Mass: 46 – 160 lbs (Adult)</li>
+    <br>
+    <li>Height: 2.2 – 3.1 ft. (Adult, At Shoulder)</li>
+    <br>
+    <li>Diet: Carnivore</li>
+    <br>
+    <li>Location:Sub-Saharan Africa and in eastern and southern African,Southern Algeria, Northern Niger and Iran. </li>
+    <br>
+    <li>Did you know: Cheetahs are 1.1 to 1.4 meters (3.5 to 4.5 feet) long from head to rump, and their tails add an additional 65 to 80 centimeters (25.5 to 31.5 inches).</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box5" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>Tigers</h3>
+<img src="../image/193355771-6530260-f242e6875ce5c9bc937a2af38c4d0c8d.jpeg" style="width: 100%; height: 300px;">
+<p>The tiger is the largest cat species, most recognisable for their pattern of dark vertical stripes on reddish-orange fur with a lighter underside. The species is classified in the genus Panthera with the lion, leopard, jaguar and snow leopard.</p>
+<ul id="list1">
+    <li>Scientific name: Panthera tigris</li>
+    <br>
+    <li>Conservation status: Endangered (Population decreasing)</li>
+    <br>
+    <li>Lifespan: 20 – 26 years</li>
+    <br>
+    <li>Speed: 30 – 40 mph (Adult, In Short Bursts)</li>
+    <br>
+    <li>Mass: Male: 200 – 670 lbs (Adult), Female: 140 – 370 lbs (Adult)</li>
+    <br>
+    <li>Location: Asia (natural habitat) Swamps,Grasslands and rain forests of Southeast Asia,China,Korea and Russia.</li>
+    <br>
+    <li>Did you know: Sometimes tigers breed with lions and give birth to hybrids known as tigons and ligers.
+</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box6" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>Bees</h3>
+<img src="../image/honeybees-comb.jpg" style="width: 100%; height: 300px;">
+<p>Bees are flying insects closely related to wasps and ants, known for their role in pollination and, in the case of the best-known bee species, the European honey bee, for producing honey and beeswax.</p>
+<ul id="list1">
+    <li>Scientific name: Anthophila</li>
+    <br>
+    <li>Higher classification: Apoidea</li>
+    <br>
+    <li>Phylum: Arthropoda</li>
+    <br>
+    <li>Length: Early bumblebee: 1 – 1.4 cm</li>
+    <br>
+    <li>Lifespan: Western honey bee: 122 – 152 days, Early bumblebee: 28 days</li>
+    <br>
+    <li>Location: Around warm areas.</li>
+    <br>
+    <li>Did you know: Without bees we would all die.</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+
+<div id="box7" class="popup_block" style="overflow: scroll; height: 500px;">
+<h3>Panda</h3>
+<img src="../image/downloadpanda.jpeg" style="width: 100%; height: 300px;">
+<p>The giant panda, also known as panda bear or simply panda, is a bear native to south central China. It is easily recognized by the large, distinctive black patches around its eyes, over the ears, and across its round body</p>
+<ul id="list1">
+    <li>Scientific name: Ailuropoda melanoleuca</li>
+    <br>
+    <li>Lifespan: 20 years (In the wild)</li>
+    <br>
+    <li>Trophic level: Herbivorous</li>
+    <br>
+    <li>Mass: Female: 150 – 220 lbs (Adult)</li>
+    <br>
+    <li>Height: 2 – 3 ft. (Adult, At Shoulder)</li>
+    <br>
+    <li>Location: Around warm areas.</li>
+    <br>
+    <li>Did you know: Theres only 1,000 pandas left in the world.</li>
+</ul>
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+</body>
+</html>
